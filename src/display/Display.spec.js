@@ -10,5 +10,11 @@ describe('<Display />', () => {
         const { getByText } = render(<Display locked={true} closed={true}/>);
         const keyhole = getByText(/locked/i);
         expect(keyhole).toBeTruthy();
+    });
+
+    it('should say unlocked if unlocked', () => {
+        const { getByText } = render(<Display locked={false} closed={true} />);
+        const keyhole = getByText(/unlocked/i);
+        expect(keyhole).toBeTruthy();
     })
 })
