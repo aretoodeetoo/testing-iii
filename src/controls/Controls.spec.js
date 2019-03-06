@@ -10,5 +10,11 @@ describe('Control panel', () => {
         const { getByText } = render(<Controls />);
         const lockButton = getByText(/lock gate/i);  
         expect(lockButton).toHaveTextContent(/lock gate/i);
+    });
+
+    it('renders closed button', () => {
+        const { getByText } = render(<Controls />);
+        const closeButton = getByText(/close gate/i);
+        expect(closeButton).toHaveTextContent(/close gate/i);
     })
 });
